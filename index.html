@@ -1,5 +1,5 @@
 <head>
-<!-- Signals Gateway Pixel + Meta Pixel Code -->
+  <!-- Signals Gateway Pixel + Meta Pixel Code -->
     <script>
       function assign(t){for(var i=1;i<arguments.length;i++){var s=arguments[i];if(s)for(var k in s)if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k]}return t;}
       !(function(f,b,e,v,vv,n,nn,t,s,tt,ss){
@@ -20,19 +20,22 @@
           if (isS && (!arguments[4] || !arguments[4].eventID)) arguments[4] = assign({}, arguments[4] || {}, { eventID: mId });
           n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
           if (typeof m === 'string' && m.indexOf('track') === 0) {
-            if (isS) arguments[1] = f.fbq.instance.pixelsByID[arguments[1]].cId;
+            if (isS) {
+              for (var newArgs = [arguments[0] === "trackSingle" ? "track" : "trackCustom"], i = 2; i < arguments.length; i++) newArgs.push(arguments[i]);
+              arguments = newArgs;
+            }
             if (arguments[1]) (f.cbq.initialized ? f.cbq.apply(f.cbq, arguments) : f.cbq.queue.push(arguments));}
         }
         if(!f._fbq) f._fbq = n;
         n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = (f.xbq)?f.xbq.queue:[];
         t = b.createElement(e); t.async = !0; t.src = v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
       })
-      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://d1ttlgqp9sim8n.cloudfront.net/sdk/8230094699445362156/events.js');
-      fbq('init', '37802642951785');fbq('track', 'PageView');
-      cbq('setHost', 'https://d1ttlgqp9sim8n.cloudfront.net/');
-    cbq('init', '8230094699445362156');
-      fbq('set', 'cId', '8230094699445362156', '37802642951785');
-      cbq('set', 'integrationMethod', 'forkFromSnippetCode');
+      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://d22rx8t0x055q.cloudfront.net/sdk/4471281167755801465/events.js');
+      fbq('init', '39402463568098');
+      cbq('setHost', 'https://d22rx8t0x055q.cloudfront.net/');
+    cbq('init', '4471281167755801465');
+      cbq('set', 'integrationMethod', 'forkFromSnippetCode@1.0');
+      fbq('track', 'PageView');
     </script>
   <!-- End Signals Gateway Pixel + Meta Pixel Code -->
 <meta name="facebook-domain-verification" content="qowwrhpyni79cf2pms3zixyrxoh3b4" />
