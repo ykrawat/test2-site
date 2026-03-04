@@ -20,25 +20,21 @@
           if (isS && (!arguments[4] || !arguments[4].eventID)) arguments[4] = assign({}, arguments[4] || {}, { eventID: mId });
           n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
           if (typeof m === 'string' && m.indexOf('track') === 0) {
-            if (isS) {
-              for (var newArgs = [arguments[0] === "trackSingle" ? "track" : "trackCustom"], i = 2; i < arguments.length; i++) newArgs.push(arguments[i]);
-              arguments = newArgs;
-            }
+            if (isS) arguments[1] = f.fbq.instance.pixelsByID[arguments[1]].cId;
             if (arguments[1]) (f.cbq.initialized ? f.cbq.apply(f.cbq, arguments) : f.cbq.queue.push(arguments));}
         }
         if(!f._fbq) f._fbq = n;
         n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = (f.xbq)?f.xbq.queue:[];
         t = b.createElement(e); t.async = !0; t.src = v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
       })
-      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://d3si1c1r9tejaq.cloudfront.net/sdk/256371093547740981/events.js');
-      fbq('init', '13402519730782');
-      cbq('setHost', 'https://dmeks01mar.yogerawat.cbinternal.com/');
-    cbq('init', '256371093547740981');
-      cbq('set', 'integrationMethod', 'forkFromSnippetCode@1.0');
-      fbq('track', 'PageView');
+      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://ca-e8011559c5a24ebea22e7b06f5a78b90.ecs.us-east-2.on.aws/sdk/8679007008684479332/events.js');
+      fbq('init', '33302677263193');fbq('track', 'PageView');
+      cbq('setHost', 'https://ca-e8011559c5a24ebea22e7b06f5a78b90.ecs.us-east-2.on.aws/');
+    cbq('init', '8679007008684479332');
+      fbq('set', 'cId', '8679007008684479332', '33302677263193');
+      cbq('set', 'integrationMethod', 'forkFromSnippetCode');
     </script>
-  <!-- End Signals Gateway Pixel + Meta Pixel Code -->
-<meta name="facebook-domain-verification" content="qowwrhpyni79cf2pms3zixyrxoh3b4" />
+  <!-- End Signals Gateway Pixel + Meta Pixel Code -->hpyni79cf2pms3zixyrxoh3b4" />
 <title>pixel test page</title>
 </head>
 <body>
