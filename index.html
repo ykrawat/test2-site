@@ -20,21 +20,24 @@
           if (isS && (!arguments[4] || !arguments[4].eventID)) arguments[4] = assign({}, arguments[4] || {}, { eventID: mId });
           n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
           if (typeof m === 'string' && m.indexOf('track') === 0) {
-            if (isS) arguments[1] = f.fbq.instance.pixelsByID[arguments[1]].cId;
+            if (isS) {
+              for (var newArgs = [arguments[0] === "trackSingle" ? "track" : "trackCustom"], i = 2; i < arguments.length; i++) newArgs.push(arguments[i]);
+              arguments = newArgs;
+            }
             if (arguments[1]) (f.cbq.initialized ? f.cbq.apply(f.cbq, arguments) : f.cbq.queue.push(arguments));}
         }
         if(!f._fbq) f._fbq = n;
         n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = (f.xbq)?f.xbq.queue:[];
         t = b.createElement(e); t.async = !0; t.src = v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);
       })
-      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://ca-e8011559c5a24ebea22e7b06f5a78b90.ecs.us-east-2.on.aws/sdk/8679007008684479332/events.js');
-      fbq('init', '33302677263193');fbq('track', 'PageView');
-      cbq('setHost', 'https://ca-e8011559c5a24ebea22e7b06f5a78b90.ecs.us-east-2.on.aws/');
-    cbq('init', '8679007008684479332');
-      fbq('set', 'cId', '8679007008684479332', '33302677263193');
-      cbq('set', 'integrationMethod', 'forkFromSnippetCode');
+      (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js', 'https://site-5.cb5internal.org/sdk/7539434427464580520/events.js');
+      fbq('init', '26602486923109');
+      cbq('setHost', 'https://site-5.cb5internal.org/');
+    cbq('init', '7539434427464580520');
+      cbq('set', 'integrationMethod', 'forkFromSnippetCode@1.0');
+      fbq('track', 'PageView');
     </script>
-  <!--Signals Gateway Pixel + Meta Pixel Code -->
+  <!-- End Signals Gateway Pixel + Meta Pixel Code -->
 <title>pixel test page</title>
 </head>
 <body>
